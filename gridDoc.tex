@@ -1,0 +1,32 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[left=0cm,top=0.5cm,right=0cm,bottom=0cm,bindingoffset=0.4cm]{geometry} % margens
+\usepackage{tikz} % criação de figuras
+\usepackage{subcaption} % posicionamento de figuras
+\usepackage{float}
+\pagestyle{empty} % remover número de páginas
+
+\begin{document}
+\renewcommand\arraystretch{1.5} % altura das linhas da tabela
+\begin{table}[h] % tabela para cabeçalho
+\begin{tabular}{|p{2cm}|p{10cm}|p{2cm}|p{4.5cm}|}
+\hline
+\textsf{Disciplina} & & \textsf{Data}  & \\ \hline
+\textsf{Docente}   & & \textsf{Página} & \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{figure}[H] % adiciona ambas as grades e a linha central
+
+\begin{tikzpicture} % grade esquerda
+\draw[step=0.5cm,color=black!50] (-1,-1) grid (9,25); % step = altura da linha, color = cor e intensidade por cento, (x,y) = início da grade, grid (w,h) = largura e altura em centímetros
+\end{tikzpicture}
+\begin{tikzpicture} % linha central
+\draw[color=black] (0,-1) -- (0,25); % ponto inicial -- ponto final
+\end{tikzpicture}
+\begin{tikzpicture} % grade direita
+\draw[step=0.5cm,color=black!50] (-1,-1) grid (9,25);
+\end{tikzpicture}
+
+\end{figure}
+
+\end{document}
